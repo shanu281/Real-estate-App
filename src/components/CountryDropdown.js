@@ -17,24 +17,27 @@ const CountryDropdown = () => {
         <div>
           <div className="text-[15px] font-medium leading-tight">{country}</div>
           <div className="text-[13px]">Select Your Place</div>
-          </div>
-          {isOpen ? (
-            <RiArrowDownSLine className="dropdown-icon-secondary" />
-            ) : (
-            <RiArrowUpSLine className="dropdown-icon-secondary" />
-          )}
+        </div>
+        {isOpen ? (
+          <RiArrowDownSLine className="dropdown-icon-secondary" />
+        ) : (
+          <RiArrowUpSLine className="dropdown-icon-secondary" />
+        )}
       </Menu.Button>
 
       <Menu.Items className="dropdown-menu">
-{
-  countries.map((country, i) => {
-    return (
-      <Menu.Item onClick={() => setCountry(country)} className="cursor-pointer hover:text=violet-700 transition" as="li" key={i}>
-{country}
-      </Menu.Item>
-    )
-  })
-}
+        {countries.map((country, i) => {
+          return (
+            <Menu.Item
+              onClick={() => setCountry(country)}
+              className="cursor-pointer hover:text=violet-700 transition"
+              as="li"
+              key={i}
+            >
+              {country}
+            </Menu.Item>
+          );
+        })}
       </Menu.Items>
     </Menu>
   );
